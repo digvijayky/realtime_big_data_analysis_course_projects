@@ -56,8 +56,8 @@
       <file leaf-file-name="SentenceCount.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala-2.11/SentenceCount.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="275">
+              <caret line="10" column="116" selection-start-line="10" selection-start-column="116" selection-end-line="10" selection-end-column="116" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#50#81#0" expanded="true" />
@@ -746,7 +746,7 @@
       <workItem from="1472608901681" duration="196000" />
       <workItem from="1472609251606" duration="906000" />
       <workItem from="1472610181261" duration="27000" />
-      <workItem from="1472610664463" duration="21961000" />
+      <workItem from="1472610664463" duration="22187000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1472609724930</created>
@@ -769,11 +769,18 @@
       <option name="project" value="LOCAL" />
       <updated>1472674140112</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="sentence count">
+      <created>1472677038347</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1472677038347</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23090000" />
+    <option name="totallyTimeSpent" value="23316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
@@ -831,7 +838,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="scala-line">
           <url>file://$PROJECT_DIR$/src/main/scala-2.11/SentenceCount.scala</url>
-          <line>19</line>
+          <line>18</line>
           <properties />
           <option name="timeStamp" value="13" />
         </line-breakpoint>
@@ -976,8 +983,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala-2.11/SentenceCount.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="275">
+          <caret line="10" column="116" selection-start-line="10" selection-start-column="116" selection-end-line="10" selection-end-column="116" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#50#81#0" expanded="true" />
