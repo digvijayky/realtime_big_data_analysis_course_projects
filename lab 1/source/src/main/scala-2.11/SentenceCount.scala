@@ -17,11 +17,9 @@ object SentenceCount {
     val sentenceCount=textFile.map(s=>(s,1)).reduceByKey((a,b)=>(a+b)).coalesce(1).saveAsTextFile("data/output/sentenceCount.txt")
 
     val sortedSentences=textFile.map(s=>(s,1)).reduceByKey((a,b)=>a+b).sortByKey().coalesce(1).saveAsTextFile("data/output/sortedSentences.txt")
-
+    println("jj")
     val totalNumSentences=textFile.map(line => line).count()
     println(s"There are $totalNumSentences sentences in the input file")
-
-
 
   }
 }
