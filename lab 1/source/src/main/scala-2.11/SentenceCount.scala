@@ -13,10 +13,15 @@ object SentenceCount {
     val sc = new SparkContext(conf)
     val textFile: RDD[String] = sc.textFile("data/input/sentencesFile.txt")
 
-    val sortedSentences: Unit =textFile.map(s=>(s,1)).reduceByKey((a, b)=>a+b).sortByKey().coalesce(1).saveAsTextFile("data/output/sortedSentences.txt")
+
+    val sentenceCount=textFile.map(s=>(s,1)).reduceByKey((a,b)=>(a+b)).coalesce(1).saveAsTextFile("data/output/sentenceCount.txt")
+
+    val sortedSentences=textFile.map(s=>(s,1)).reduceByKey((a,b)=>a+b).sortByKey().coalesce(1).saveAsTextFile("data/output/sortedSentences.txt")
 
     val totalNumSentences=textFile.map(line => line).count()
     println(s"There are $totalNumSentences sentences in the input file")
+
+
 
   }
 }
