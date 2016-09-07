@@ -1,4 +1,4 @@
-name := "source"
+name := "Real-time-big-data-analytics"
 
 version := "1.0"
 

@@ -11,11 +11,11 @@ object SentenceCount {
     val conf = new SparkConf().setAppName("SparkSentenceCount").setMaster("local[*]").set("spark.executor.memory","8g").set("spark.hadoop.validateOutputSpecs", "false") //Overwrite output files
 
     val sc = new SparkContext(conf)
-    val textFile: RDD[String] = sc.textFile("data/input/sentencesFile.txt")
+    val textFile: RDD[String] = sc.textFile("lab 1/source/data/input")
 
-    val sentenceCount=textFile.map(s=>(s,1)).reduceByKey((a,b)=>(a+b)).coalesce(1).saveAsTextFile("data/output/sentenceCount.txt")
+    val sentenceCount=textFile.map(s=>(s,1)).reduceByKey((a,b)=>(a+b)).coalesce(1).saveAsTextFile("lab 1/source/data/output/sentenceCount.txt")
 
-    val sortedSentences=textFile.map(s=>(s,1)).reduceByKey((a,b)=>a+b).sortByKey().coalesce(1).saveAsTextFile("data/output/sortedSentences.txt")
+    val sortedSentences=textFile.map(s=>(s,1)).reduceByKey((a,b)=>a+b).sortByKey().coalesce(1).saveAsTextFile("lab 1/source/data/output/sortedSentences.txt")
 
     val totalNumSentences=textFile.map(line => line).count()
     println(s"There are $totalNumSentences sentences in the input file")
