@@ -1,7 +1,6 @@
 /**
   * Created by digvijayky on 8/30/2016.
   */
-
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 object SentenceCount {
