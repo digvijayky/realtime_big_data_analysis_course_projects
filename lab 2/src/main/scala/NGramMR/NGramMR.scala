@@ -26,7 +26,7 @@ object NGramMR {
       .map(_.split("\\s").toList)
       .flatMap(_.sliding(n))
       .filter(_.size==n)
-//      .take(15)
+      .take(15)
       .foreach(println)
   }
 }
