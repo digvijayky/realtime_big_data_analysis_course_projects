@@ -17,15 +17,17 @@ object FilterNGrams {
     val sc = new SparkContext(conf)
     val textFile = sc.textFile("lab 2/data/input/sentencesFile.txt").toLocalIterator;
 
-    val n = 4
+    val n = 5
     val filterWord: String ="MIT"
 
-    println("%" * 100 +"\n" + s"\nFiltering the ${n}-grams containing the word $filterWord"+ "\n" + "%" * 100 + "\n")
+    println("%" * 100 + s"\nFiltering the ${n}-grams containing the word $filterWord"+ "\n" + "%" * 100 + "\n")
     val filterNGrams = textFile
       .map(_.split("\\s").toList)
-      .flatMap(_.sliding(3))
-      .filter(_.size==3)
+      .flatMap(_.sliding(n))
+      .filter(_.size==n)
       .foreach(
-        x=>(for(y <- x) if (y.contains(filterWord)) println(x))
+        x=>(for(y <- x) if (y.contains(filterWord)) println(x)))
   }
+
 }
+
