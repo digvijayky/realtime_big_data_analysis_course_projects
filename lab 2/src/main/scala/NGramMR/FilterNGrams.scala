@@ -8,9 +8,6 @@ import org.apache.spark.{SparkConf, SparkContext}
   */
 object FilterNGrams {
   def main(args: Array[String]): Unit = {
-    val n = 4
-    val filterWord = "MIT"
-
     System.setProperty("hadoop.home.dir","C:\\winutils")
     System.setProperty("spark.executor.memory","8G")
     val conf = new SparkConf().setAppName("SparkSentenceCount").setMaster("local[*]").set("spark.executor.memory","8g").set("spark.hadoop.validateOutputSpecs", "false") //Overwrite output files
@@ -20,11 +17,15 @@ object FilterNGrams {
     val sc = new SparkContext(conf)
     val textFile = sc.textFile("lab 2/data/input/sentencesFile.txt").toLocalIterator;
 
-    println("%" * 100 + "\n" + s"Generating ${n}-grams from the input file" + "\n" + "%" * 100 + "\n")
-    val ngrams = textFile
+    val n = 4
+    val filterWord: String ="MIT"
+
+    println("%" * 100 +"\n" + s"\nFiltering the ${n}-grams containing the word $filterWord"+ "\n" + "%" * 100 + "\n")
+    val filterNGrams = textFile
       .map(_.split("\\s").toList)
-      .flatMap(_.sliding(n))
-      .filter(_.size == n)
-      .foreach(println)
+      .flatMap(_.sliding(3))
+      .filter(_.size==3)
+      .foreach(
+        x=>(for(y <- x) if (y.contains(filterWord)) println(x))
   }
 }

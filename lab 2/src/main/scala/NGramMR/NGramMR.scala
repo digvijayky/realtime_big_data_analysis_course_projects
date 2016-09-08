@@ -20,18 +20,14 @@ object NGramMR {
     val sc = new SparkContext(conf)
     val textFile = sc.textFile("lab 2/data/input/sentencesFile.txt").toLocalIterator;
 
-    val n = 4
+    val n = 5
     println("%"*100+"\n"+s"Generating ${n}-grams from the input file"+"\n"+"%"*100+"\n")
     val ngrams = textFile
       .map(_.split("\\s").toList)
       .flatMap(_.sliding(n))
       .filter(_.size==n)
+      .take(15)
       .foreach(println)
-
-
-
-
-
   }
 }
 
