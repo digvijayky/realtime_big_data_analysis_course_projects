@@ -6,7 +6,7 @@ package main.scala.NGramWC
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
-object NGramWordCount {
+object NGramMR {
   def main(args: Array[String]): Unit = {
     System.setProperty("hadoop.home.dir","C:\\winutils")
     System.setProperty("spark.executor.memory","8G")
