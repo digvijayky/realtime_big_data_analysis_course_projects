@@ -43,7 +43,7 @@ public class MainFrameDetection {
         for (MBFImage mbfImage : video) {
             BufferedImage bufferedFrame = ImageUtilities.createBufferedImageForDisplay(mbfImage);
             j++;
-            String name = "lab 3/data/output/frames/frame" + j + ".jpg";
+            String name = "lab 3/data/output/frames/mit" + j + ".jpg";
             File outputFile = new File(name);
             try {
 
