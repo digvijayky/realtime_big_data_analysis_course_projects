@@ -29,22 +29,11 @@
  */
 package org.openimaj.ml.neuralnet;
 
+import Jama.Matrix;
 import gnu.trove.map.hash.TIntIntHashMap;
 import gnu.trove.map.hash.TIntObjectHashMap;
 import gnu.trove.procedure.TIntObjectProcedure;
 import gov.sandia.cognition.io.CSVUtility;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 import org.encog.engine.network.activation.ActivationStep;
 import org.encog.mathutil.rbf.RBFEnum;
 import org.encog.ml.MLRegression;
@@ -67,7 +56,10 @@ import org.encog.neural.rbf.RBFNetwork;
 import org.encog.util.simple.EncogUtility;
 import org.openimaj.util.pair.IndependentPair;
 
-import Jama.Matrix;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * @author Sina Samangooei (ss@ecs.soton.ac.uk)
